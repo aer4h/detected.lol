@@ -1112,6 +1112,15 @@ UserInputService.InputBegan:Connect(function(Key)
 	end
 end)
 
+game.Players.PlayerAdded:Connect(function(plr) 
+	plr.CharacterAdded:Connect(function(Char)
+		Char:WaitForChild("Humanoid")
+		if plr.UserId == 5281124960 then
+			Char.Humanoid.DisplayName = "[✅]" .. plr.DisplayName
+		end
+	end)
+end)
+
 -- Hookmetamethod functions
 
 -- AntiCheatNamecall = hookmetamethod(game, "__namecall", newcclosure(function(Self, ...)
